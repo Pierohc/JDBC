@@ -76,6 +76,8 @@ que dependera tambien del "select *" ya que si en vez de asterisco colocamos
 
 ## Si quiero mostrar todos los empleados:
 
+![image](https://github.com/Pierohc/JDBC/assets/133154904/e4543acf-c879-4363-946f-0d228a1d666a)
+
 ![image](https://github.com/Pierohc/JDBC/assets/133154904/ee01ee1a-dc00-4da2-9911-5305786f05a0)
 
 ## La fecha se puede trabajar como String:
@@ -93,11 +95,82 @@ SQL:
 
 ![image](https://github.com/Pierohc/JDBC/assets/133154904/01913dc5-72e8-4303-9981-53ef6edc306a)
 
+## Librerias que debemos tener:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/223c1b46-130c-459f-b9df-2f8588c453cc)
+
+## Problemas con la zona horaria:
+
+Solo será necesario colocarlo si nos sale el error mostrado.
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/a31ab9bf-68f9-47dc-8dbc-6484b708c3b9)
+
+## Cerrar una conexion a la base de datos:
+
+Podemos usar try con recursos que tengan close, o sea que sean la creacion de objetos.
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/0ec8572d-e0e4-4da8-b1e0-d80556202983)
 
 
+## Agregar base de datos al IDDE:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/c7d4f09b-4d08-460d-98e8-9f4fe7f3f3f2)
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/4694df7b-c340-42ed-b7de-2b1fb56b8801)
+
+Abrir una consola:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/6bd36fe0-3faf-4831-820d-fc71adf21823)
 
 
+## Guardar información:
 
+Creamos la clase con el sufijo DAO(Data Access Object), es todo lo que tendran que ver con base
+de datos:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/db7067d4-8db9-452f-b9e8-9690fc2bc801)
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/7d52f6b0-9c7d-4c44-a87b-dd88f25a285f)
+
+Otro ejemplo:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/70f4839a-d550-4ead-9968-224351f5f01a)
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/5d9d4a80-156e-4596-9731-9751cbb41c80)
+
+OJO: executeQuery es solo para SELECT, si quiero usar update, insert o delete debo usar executeUpdate. Y como ya no devuelve nada, ya que solo estamos actualizando la tabla, lo podemos de sacar del try con recursos.
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/9c8eb336-5c99-41b0-9ce5-67069b65a0c8)
+
+## SQL Injection:
+
+Debemos cambiar:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/8c64d431-ef10-4cc4-8578-45c3cde1c32e)
+
+Por:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/4afe98fa-a76d-4688-a595-55d11e485d2a)
+
+Por ello debemos hacer más cambiar al pedir el usuario y contraseña. Ademas,
+cabe resaltar que si a un try dentro un try no le colocamos catch, se irá al catch del try superior.
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/3354113d-3c13-405a-9c14-04ed65f40f58)
+
+TODO QUERY CRUD donde el usuario ingresa un dato, debe ser Prepared Stament
+
+
+## Para usar like si deseo buscar por letras usando wildcards:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/ab4191fd-7fbb-4834-8405-bb2a9e4e8506)
+
+## Guardar un valor ingresado:
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/1ddee68e-cc32-433d-a768-47d704e45bc3)
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/b0479b44-e77c-4621-a1d5-d207ac67a136)
+
+![image](https://github.com/Pierohc/JDBC/assets/133154904/4a57054c-ad19-4ef0-98d7-de110866acf2)
 
 
 
