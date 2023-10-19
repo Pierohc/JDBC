@@ -1,3 +1,46 @@
+    try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } 
+            catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+    
+            String url = "jdbc:mysql://localhost:3306/hr";
+            String username = "root";
+            String password = "root";
+    
+    
+    
+            //Query:
+            String sql = "select * from employees where employee_id > 148";
+    
+    
+            try(Connection conn = DriverManager.getConnection(url, username, password);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+    
+    
+    
+                ////////////////////////////////////////////////////////////////////////////////
+                //AQUI VA EL CODIGO. EJEMPLO:
+                while(rs.next()){
+    
+                    int employeeId = rs.getInt(1 );
+                    String firstName = rs.getString("first_name");
+                    String hireDate = rs.getString("hire_date");
+                    
+                    System.out.println("eid:  " + employeeId + " | first_name: " + firstName + " | hd: "+ hireDate);
+                }
+                ///////////////////////////////////////////////////////////////////////////////
+    
+    
+            } 
+            catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+
 # Maven:
 Ahora las librerias son llamadas dependencias
 
