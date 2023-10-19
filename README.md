@@ -9,6 +9,13 @@ Luego de agregar algo, es necesario guardar los cambios(Load Maven Changes)
 
 https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/8.0.33
 
+    <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <dependency>
+        <groupId>com.mysql</groupId>
+        <artifactId>mysql-connector-j</artifactId>
+        <version>8.0.33</version>
+    </dependency>
+
 ![image](https://github.com/Pierohc/JDBC/assets/133154904/dd48281e-b6ae-497e-b489-6bcf3f954eb5)
 
 # Driver:
