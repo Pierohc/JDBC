@@ -1,3 +1,48 @@
+Con Prepare Stament:
+Usado cuando el usuario ingresa datos. Aqui se creara un trabajo en JobDao y lo agregaremos a la tabla de jobs:
+
+       public void crear(String jobId, String jobTitle, int minSalary,int maxSalary){
+    
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            }
+            catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+    
+            String url = "jdbc:mysql://localhost:3306/hr";
+            String username = "root";
+            String password = "root";
+    
+    
+    
+            //Query:
+            String sql = "insert into jobs(job_id,job_title,min_salary,max_salary)" +
+                    "values(?,?,?,?)";
+    
+    
+            try(Connection conn = DriverManager.getConnection(url, username, password);
+                PreparedStatement psmtmt = conn.prepareStatement(sql)) {
+                
+                
+                
+                psmtmt.setString(1,jobId);
+                psmtmt.setString(2,jobTitle);
+                psmtmt.setInt(3,minSalary);
+                psmtmt.setInt(4,maxSalary);
+    
+    
+            }
+            catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+    
+        }
+
+    
+
+Sin Prepare Stament:
+
     try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
             } 
@@ -21,8 +66,8 @@
     
     
     
-                ////////////////////////////////////////////////////////////////////////////////
-                //AQUI VA EL CODIGO. EJEMPLO:
+                ///////////////////////////AQUI VA EL CODIGO. EJEMPLO://////////////////////////
+               
                 while(rs.next()){
     
                     int employeeId = rs.getInt(1 );
