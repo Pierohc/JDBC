@@ -30,8 +30,9 @@ Usado cuando el usuario ingresa datos. Aqui se creara un trabajo en JobDao y lo 
                 psmtmt.setString(2,jobTitle);
                 psmtmt.setInt(3,minSalary);
                 psmtmt.setInt(4,maxSalary);
-    
-    
+
+                psmtmt.executeUpdate();
+
             }
             catch (SQLException e) {
                 throw new RuntimeException(e);
